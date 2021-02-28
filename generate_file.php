@@ -14,6 +14,6 @@ $pdf->SetFont('Arial','B',16);
 
 $pdf->Cell(40,10,'Hola, Fpdf desde php');
 
-$pdf->Output('I',$Now.'.pdf');
+$pdf->Output('I',$Now.'.pdf',true);
 
 ?>
