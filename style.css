@@ -1,7 +1,16 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
+
+
 body {
-     background-color: #F7F7F7;
+     background-color: #F1E3D4;
 }
 
 h1 {
      color: white;
+}
+
+nav {
+     font-family: 'Noto Sans KR', sans-serif;
 }
