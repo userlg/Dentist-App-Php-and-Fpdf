@@ -82,6 +82,15 @@ $name = 'Luis';
 /******************************************************** */
 
 
+/***********Colores*********************************** */
+
+$white = '255,255,255';
+
+$pink = '255,107,132';
+
+/******************************************************** */
+
+
 
 $Now = date("Ymdsh");
 
@@ -91,14 +100,18 @@ $pdf = new PDF('P', 'mm', 'Letter');
 
 $pdf->AddPage();
 
+//*************************Set app title */
+
+$pdf->SetTitle('Click Dental Design',true);
+
+//************************X   y   image width */
 $pdf->Image('logo.jpg', 160, 10, 40);
 
 $pdf->SetFont('Times', 'B', 14);
 
+$pdf->SetFillColor(255,107,132);
 
-$pdf->SetFillColor(255, 107, 132);
-
-$pdf->SetTextColor(255, 255, 255);
+$pdf->SetTextColor($white);
 
 $pdf->SetX(5);
 
