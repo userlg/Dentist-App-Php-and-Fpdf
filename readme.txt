@@ -7,7 +7,7 @@ redtype = '#FF6B84'
 
 bg_image = '#F7F7F7'
 
-primary_blue = '#00C2CD'
+primary_blue = '#2F2785'
 
 primary_beidge= '#F1E3D4'
 

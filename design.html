@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="icon" href="logo.png" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="tailwind.css" />
-    <title>Pagina de Prueba</title>
-  </head>
-  <body>
-          <form action="" class="m-12">
 
-             <div class="container justify-between">
-               <label for="nombre">Nombre</label>
-               <input type="text " name="nombre" class="rounded-2xl border-2 border-solid border-blue-200">
-             </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="icon" href="logo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="tailwind.css" />
+  <title>Pagina de Prueba</title>
+</head>
+
+<body>
+  <div class="container justify-center mx-auto mt-14 mb-10">
+    <div class="flex  justify-center">
+      <form action="generate_file.php"  method="POST" class="flex  flex-wrap justify-between bg-purple-200">
+
+        <div class=" block mx-auto  text-center ">
+          <label for="nombre" class="text-center justify-center">Paciente</label>
+          <input type="text " name="nombre" class="rounded-2xl border-2 border-solid border-blue-200 ml-6">
+        </div>
+
+        <div class="block mx-auto  my-6">
+          <label for="doctor"  class="ml-4">Doctor</label>
+          <input type="text " name="doctor" class="rounded-2xl border-2 border-solid border-blue-200 ml-9">
+        </div>
+
+        <div class="text-white bg-blue-800 w-36 mx-4 my-6 rounded-2xl text-xl shadow-sm ">
+        <button type="submit">Enviar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
 
 
-          </form>
-        App Dental Click Design -- Derechos 2021
-      </div>
-    </footer>
-  </body>
+  App Dental Click Design -- Derechos 2021
+  </div>
+  </footer>
+</body>
+
 </html>

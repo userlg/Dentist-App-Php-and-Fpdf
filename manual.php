@@ -13,7 +13,7 @@
 
 <body>
   <div class="flex justify-end mr-12 mt-10">
-    <img src="logo.jpg" class="border-solid border-2 border-black rounded-2xl shadow-lg w-48 h-28" />
+    <img src="logo2.png" class="border-solid border-2 border-black rounded-2xl shadow-lg w-48 h-28" />
   </div>
 
   <nav class="no-underline flex flex-wrap justify-center  cursor-pointer mb-12">

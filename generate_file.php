@@ -75,9 +75,17 @@ class PDF extends FPDF
 
 $name = $_POST['nombre'];
 
+$doctor = 'Armando Pérez';
+
+$fecha = date('d/m/Y');
+
+$doctor = decodificar($doctor);
+
+$name = 'Luis Güipe';
+
 $name = decodificar($name);
 
-$name = 'Luis';
+
 
 /******************************************************** */
 
@@ -100,12 +108,14 @@ $pdf = new PDF('P', 'mm', 'Letter');
 
 $pdf->AddPage();
 
+$pdf->SetMargins(4,4);
+
 //*************************Set app title */
 
 $pdf->SetTitle('Click Dental Design',true);
 
 //************************X   y   image width */
-$pdf->Image('logo.jpg', 160, 10, 40);
+$pdf->Image('logo2.png', 160, 10, 40);
 
 $pdf->SetFont('Times', 'B', 14);
 
@@ -115,14 +125,22 @@ $pdf->SetTextColor($white);
 
 $pdf->SetX(5);
 
-$pdf->RoundedRect(5, 12, 90, 7, 2, 'D');
+$pdf->Text(5,10,'Prueba');
 
-$pdf->Cell(100, 12, 'Hola, Fpdf desde php', 0, 1, 'C', true);
+//$pdf->RoundedRect(5, 12, 90, 7, 2, 'D');
 
-$pdf->Ln(5);
+$pdf->Cell(100, 12, 'Doctor: '. $doctor, 0, 1, 'C', true);
+
+$pdf->Ln(1);
 
 $pdf->SetX(5);
 
-$pdf->Cell(100, 12, $name, 0, 1, 'C', true);
+$pdf->Cell(100, 12,'Paciente: '. $name, 0, 1, 'C', true);
+
+$pdf->Ln(1);
+
+$pdf->SetX(5);
+
+$pdf->Cell(100, 12, "Fecha: ". $fecha, 0, 1, "C", TRUE);
 
 $pdf->Output('I', $Now . '.pdf', true);
