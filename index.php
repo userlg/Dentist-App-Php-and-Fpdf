@@ -23,22 +23,7 @@
       <div class="hover:underline m-4"><a href="form.php">Generar</a></div>
     </div>
   </nav>
-  <p class="justify-text">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam ea
-    dolore iusto iste reiciendis architecto ratione, id eum, hic molestiae
-    esse iure minus, sequi exercitationem? Magni a odit culpa excepturi! Lorem
-    ipsum dolor sit amet consectetur adipisicing elit. Veritatis accusamus
-    porro dicta, itaque nobis cumque sint, illo labore unde pariatur non qui
-    id! Esse molestiae voluptatem sit obcaecati nesciunt eum? Lorem ipsum,
-    dolor sit amet consectetur adipisicing elit. Voluptate voluptatum
-    quibusdam repellat suscipit quam rerum deserunt aperiam eos? Atque unde
-    cupiditate reprehenderit pariatur maiores non dolores dignissimos nemo
-    adipisci doloremque. Lorem ipsum, dolor sit amet consectetur adipisicing
-    elit. Ipsa voluptates repellat nostrum sint praesentium dolor laboriosam
-    atque? Beatae, non! Assumenda ipsam dolorum a itaque maiores distinctio
-    facere hic. Sunt, placeat?
-  </p>
-
+    
 
 
 </body>
