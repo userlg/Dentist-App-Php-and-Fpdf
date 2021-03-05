@@ -98,6 +98,7 @@ $pink = '255,107,132';
 
 /******************************************************** */
 
+$logo = 'logo2.jpeg';
 
 
 $Now = date("Ymdsh");
@@ -115,13 +116,13 @@ $pdf->SetMargins(4,4);
 $pdf->SetTitle('Click Dental Design',true);
 
 //************************X   y   image width */
-$pdf->Image('logo2.png', 160, 10, 40);
+$pdf->Image($logo, 160, 10, 40);
 
 $pdf->SetFont('Times', 'B', 14);
 
 $pdf->SetFillColor(255,107,132);
 
-$pdf->SetTextColor($white);
+$pdf->SetTextColor(255,255,255);
 
 $pdf->SetX(5);
 

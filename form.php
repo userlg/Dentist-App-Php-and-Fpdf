@@ -26,23 +26,19 @@
 
   <form action="generate_file.php" method="POST">
 
-  <div>
-    <label for="nombre"></label>
-    <input type="text" name="nombre" >
-  </div>
+    <div>
+      <label for="nombre"></label>
+      <input type="text" name="nombre" value="Luis">
+    </div>
 
-  <button type="submit" >Enviar</button>
+    <button type="submit">Enviar</button>
   </form>
-        
+
 </body>
 <footer class="font-serif font-white flex mt-10 justify-center">
-      <div
-        class="text-white text-ml rounded-2xl w-96 h-8 text-center"
-        style="background-color: #2f2785"
-        ;
-      >
-        App Dental Click Design -- Derechos 2021
-      </div>
-    </footer>
+  <div class="text-white text-ml rounded-2xl w-96 h-8 text-center" style="background-color: #2f2785" ;>
+    App Dental Click Design -- Derechos 2021
+  </div>
+</footer>
 
 </html>
