@@ -31,7 +31,9 @@
       <input type="text" name="nombre" value="Luis">
     </div>
 
-    <input name="image" type="file" />
+    <input name="antes1" type="file" />
+
+    <input name="despues1" type="file" />
 
     <button type="submit">Enviar</button>
   </form>

@@ -1,10 +1,13 @@
 <?php
 require('FPDF/fpdf.php');
 
+//echo '<link rel="icon" type="icon" href="Logo/logo.png" />';
+
 function decodificar($dat)
 {
      return utf8_decode($dat);
 }
+
 
 class PDF extends FPDF
 {
@@ -69,6 +72,44 @@ class PDF extends FPDF
                ($h - $y3) * $this->k
           ));
      }
+
+     function Title($titulo,$x,$y){
+
+          $this->SetFont('Arial','B',18);
+
+          $this->SetTextColor(0,0,0);  //Negro
+
+          $this->SetFillColor(255,255,255); //Blanco
+
+          $this->SetY($y);  $this->SetX($x);
+
+          $this->Cell(80,14,$titulo, 0,1, 'C',true);
+
+     }
+
+     function Logo($logo){
+
+          $this->Image($logo, 162, 6, 40);
+     }
+
+
+     function Membret($type,$dat,$x){
+
+$this->SetFillColor(255,107,132);
+
+$this->SetFont('Times', 'B', 14);
+
+
+$this->SetTextColor(255,255,255);
+
+$this->SetX($x);  
+
+
+$this->Cell(90, 13, $type. $dat, 0, 1, 'C', true);
+
+
+$this->Ln(1);
+     }
 }
 
 //********************************************************************** */
@@ -83,9 +124,15 @@ $doctor = decodificar($doctor);
 
 $name = 'Luis Güipe';
 
-//$name = decodificar($name);
+$name = decodificar($name);
 
-$imagenurl =$_FILES['image']['name']; 
+$imagenurl =$_FILES['antes1']['name']; 
+
+$path1 = 'images/';
+
+$dat = $_FILES['antes1']['tmp_name'];
+
+
 
 
 /******************************************************** */
@@ -117,36 +164,41 @@ $pdf->SetMargins(4,4);
 $pdf->SetTitle('Click Dental Design',true);
 
 //************************X   y   image width */
-$pdf->Image($logo, 160, 10, 40);
 
-$pdf->SetFont('Times', 'B', 14);
 
-$pdf->SetFillColor(255,107,132);
+$pdf->Logo($logo);
 
-$pdf->SetTextColor(255,255,255);
+$pdf->Title('Planeacion y Resumen del Caso',60,6);
 
-$pdf->SetX(5);
+$pdf->Ln(3);
 
-$pdf->Text(5,10,'Prueba');
+$pdf->Membret('Doctor: ',$doctor,20);
 
-//$pdf->RoundedRect(5, 12, 90, 7, 2, 'D');
+$pdf->Membret('Paciente: ',$name,20);
 
-$pdf->Cell(100, 12, 'Doctor: '. $doctor, 0, 1, 'C', true);
+$pdf->Membret('Fecha: ',$fecha,20);
 
-$pdf->Ln(1);
+$pdf->Ln(3);
 
-$pdf->SetX(5);
+$path = $path1 . basename($_FILES['antes1']['name']);
 
-$pdf->Cell(100, 12,'Paciente: '. $name, 0, 1, 'C', true);
+move_uploaded_file($dat, $path);
 
-$pdf->Ln(1);
 
-$pdf->SetX(5);
+$pdf->Image($path,$pdf->GetX()+ 20 ,$pdf->GetY()+5,70,50);
 
-$pdf->Cell(100, 12, "Fecha: ". $fecha, 0, 1, "C", TRUE);
+unlink($path);
 
-$pdf->Ln(1);
+//********************Segunda Imagen */
 
-//$pdf->Image($name,120, 50, 180);
+$path = $path1 . basename($_FILES['despues1']['name']);
+
+$dat = $_FILES['despues1']['tmp_name'];
+
+move_uploaded_file($dat, $path);
+
+$pdf->Image($path,$pdf->GetX()+ 115 ,$pdf->GetY()+5,70,50);
+
+unlink($path);
 
 $pdf->Output('I', $Now . '.pdf', true);
