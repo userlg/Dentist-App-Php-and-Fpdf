@@ -24,12 +24,14 @@
     </div>
   </nav>
 
-  <form action="generate_file.php" method="POST">
+  <form action="generate_file.php" method="POST" enctype="multipart/form-data">
 
     <div>
       <label for="nombre"></label>
       <input type="text" name="nombre" value="Luis">
     </div>
+
+    <input name="image" type="file" />
 
     <button type="submit">Enviar</button>
   </form>

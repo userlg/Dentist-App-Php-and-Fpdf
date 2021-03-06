@@ -34,7 +34,20 @@ Para la realizacion de este proyecto se utilizo:
 
 -Editor de Texto Vs Code
 
+-Javascript (Puede ser opcional)
+
 
 *************************************************************
 *************************************************************
 *************************************************************
+
+Contexto
+
+Esta aplicacion lo que hace es generar un reporte Pdf con los datos de los pacientes y doctores
+
+mediante el uso de formularios de html que estan creados para manejar imagenes, tablas e inputs con 
+
+los datos.
+
+
+************************************************************

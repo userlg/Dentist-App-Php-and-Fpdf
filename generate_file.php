@@ -83,8 +83,11 @@ $doctor = decodificar($doctor);
 
 $name = 'Luis Güipe';
 
-$name = decodificar($name);
+//$name = decodificar($name);
 
+$imagenurl =$_FILES['image']['name']; 
+
+$name = $imagenurl;
 
 
 /******************************************************** */
@@ -143,5 +146,9 @@ $pdf->Ln(1);
 $pdf->SetX(5);
 
 $pdf->Cell(100, 12, "Fecha: ". $fecha, 0, 1, "C", TRUE);
+
+$pdf->Ln(1);
+
+//$pdf->Image($name,120, 50, 180);
 
 $pdf->Output('I', $Now . '.pdf', true);
