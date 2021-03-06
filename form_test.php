@@ -12,7 +12,7 @@
 
     <form action="xpdf.php" method="POST" enctype="multipart/form-data">
 
-        <input type='file' required name="image" id="image">
+        <input type='file' required name="antes1">
         <input type="submit" name="Subir" value="Upload">
 
     </form>
