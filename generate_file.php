@@ -87,8 +87,6 @@ $name = 'Luis Güipe';
 
 $imagenurl =$_FILES['image']['name']; 
 
-$name = $imagenurl;
-
 
 /******************************************************** */
 
@@ -101,7 +99,7 @@ $pink = '255,107,132';
 
 /******************************************************** */
 
-$logo = 'logo2.jpeg';
+$logo = 'Logo/logo2.jpeg';
 
 
 $Now = date("Ymdsh");

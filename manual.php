@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="icon" href="logo.png" />
+  <link rel="icon" type="icon" href="Logo/logo.png" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="tailwind.css" />
   <title>Click Dental Design - App</title>
@@ -13,7 +13,7 @@
 
 <body>
   <div class="flex justify-end mr-12 mt-10">
-    <img src="logo2.png" class="border-solid border-2 border-black rounded-2xl shadow-lg w-48 h-28" />
+    <img src="Logo/logo2.png" class="border-solid border-2 border-black rounded-2xl shadow-lg w-48 h-28" />
   </div>
 
   <nav class="no-underline flex flex-wrap justify-center  cursor-pointer mb-12">
