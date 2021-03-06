@@ -24,8 +24,6 @@
     </div>
   </nav>
     
-
-
 </body>
 
 <footer class="font-serif font-white flex mt-10 justify-center">
