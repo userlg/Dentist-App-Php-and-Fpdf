@@ -87,6 +87,20 @@ class PDF extends FPDF
 
      }
 
+     function Message($msg,$x,$y){
+
+          $this->SetFont('Times','B',15);
+
+          $this->SetTextColor(0,0,0);  //Negro
+
+          $this->SetFillColor(255,255,255); //Blanco
+
+          $this->SetY($y);  $this->SetX($x);
+
+          $this->Cell(25,11,$msg, 0,1, 'C',true);
+
+     }
+
      function Logo($logo){
 
           $this->Image($logo, 162, 6, 40);
@@ -95,20 +109,46 @@ class PDF extends FPDF
 
      function Membret($type,$dat,$x){
 
-$this->SetFillColor(255,107,132);
+      $this->SetFillColor(255,107,132);
+      
+      $this->SetFont('Times', 'B', 14);
+      
+      
+      $this->SetTextColor(255,255,255);
+      
+      $this->SetX($x);  
+      
+      
+      $this->Cell(90, 13, $type. $dat, 0, 1, 'C', true);
+      
+      
+      $this->Ln(1);
+     }
 
-$this->SetFont('Times', 'B', 14);
+     function lef_image($path1,$name,$y,$w,$h){
 
+          $dat = $_FILES[$name]['tmp_name'];
 
-$this->SetTextColor(255,255,255);
+          $path = $path1 . basename($_FILES[$name]['name']);
 
-$this->SetX($x);  
+          move_uploaded_file($dat, $path);
 
+          $this->Image($path,$this->GetX()+ 20 ,$y + 5,$w,$h);
 
-$this->Cell(90, 13, $type. $dat, 0, 1, 'C', true);
+          unlink($path);
+     }
 
+     function right_image($path1,$name,$y,$w,$h){
 
-$this->Ln(1);
+          $dat = $_FILES[$name]['tmp_name'];
+
+          $path = $path1 . basename($_FILES[$name]['name']);
+
+          move_uploaded_file($dat, $path);
+
+          $this->Image($path,$this->GetX()+ 115 ,$y + 5, $w,$h);
+
+          unlink($path);
      }
 }
 
@@ -116,13 +156,13 @@ $this->Ln(1);
 
 $name = $_POST['nombre'];
 
-$doctor = 'Armando Pérez';
+$doctor = $_POST['doctor'];
 
 $fecha = date('d/m/Y');
 
 $doctor = decodificar($doctor);
 
-$name = 'Luis Güipe';
+//$name = 'Luis Güipe';
 
 $name = decodificar($name);
 
@@ -130,19 +170,15 @@ $imagenurl =$_FILES['antes1']['name'];
 
 $path1 = 'images/';
 
-$dat = $_FILES['antes1']['tmp_name'];
-
-
-
-
 /******************************************************** */
 
-
 /***********Colores*********************************** */
+
 
 $white = '255,255,255';
 
 $pink = '255,107,132';
+
 
 /******************************************************** */
 
@@ -172,33 +208,34 @@ $pdf->Title('Planeacion y Resumen del Caso',60,6);
 
 $pdf->Ln(3);
 
-$pdf->Membret('Doctor: ',$doctor,20);
+$pdf->Membret('Doctor (A): ',$doctor,20);
 
 $pdf->Membret('Paciente: ',$name,20);
 
 $pdf->Membret('Fecha: ',$fecha,20);
 
-$pdf->Ln(3);
+$pdf->Ln(1);   $y1 = $pdf->GetY();
 
-$path = $path1 . basename($_FILES['antes1']['name']);
+$pdf->Message('Antes',50,$pdf->GetY());
 
-move_uploaded_file($dat, $path);
+$pdf->Message('Despues',145,$y1);
 
+$pdf->lef_image($path1,'antes1',$pdf->GetY(),90,62);
 
-$pdf->Image($path,$pdf->GetX()+ 20 ,$pdf->GetY()+5,70,50);
+$pdf->right_image($path1,'despues1',$pdf->GetY(),90,62);
 
-unlink($path);
+$pdf->Ln(2);
 
-//********************Segunda Imagen */
+$y1 = $pdf->GetY() + 65;  
 
-$path = $path1 . basename($_FILES['despues1']['name']);
+$pdf->lef_image($path1,'antes2',$y1,80,50);
 
-$dat = $_FILES['despues1']['tmp_name'];
+$pdf->right_image($path1,'despues2',$y1,80,50);
 
-move_uploaded_file($dat, $path);
+$pdf->SetY($y1);  $y1  = $pdf->GetY() + 54;
 
-$pdf->Image($path,$pdf->GetX()+ 115 ,$pdf->GetY()+5,70,50);
+$pdf->lef_image($path1,'antes3',$y1,80,50);
 
-unlink($path);
+$pdf->right_image($path1,'despues3',$y1,80,50);
 
 $pdf->Output('I', $Now . '.pdf', true);

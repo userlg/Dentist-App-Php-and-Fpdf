@@ -31,9 +31,22 @@
       <input type="text" name="nombre" value="Luis">
     </div>
 
+    <div>
+      <label for="doctor"></label>
+      <input type="text" name="doctor" placeholder="doctor">
+    </div>
+
     <input name="antes1" type="file" />
 
     <input name="despues1" type="file" />
+
+    <input name="antes2" type="file" />
+
+    <input name="despues2" type="file" />
+
+    <input name="antes3" type="file" />
+
+    <input name="despues3" type="file" />
 
     <button type="submit">Enviar</button>
   </form>
