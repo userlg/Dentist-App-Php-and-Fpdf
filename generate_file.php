@@ -239,3 +239,8 @@ $pdf->lef_image($path1,'antes3',$y1,80,50);
 $pdf->right_image($path1,'despues3',$y1,80,50);
 
 $pdf->Output('I', $Now . '.pdf', true);
+
+
+//***************************************** */
+
+?>
