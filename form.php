@@ -28,7 +28,7 @@
 
     <div>
       <label for="nombre"></label>
-      <input type="text" name="nombre" value="Luis">
+      <input type="text" name="nombre" value="Paciente">
     </div>
 
     <div>
