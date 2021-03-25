@@ -2,15 +2,11 @@
 
 require('pdf.php');
 
-
 //echo '<link rel="icon" type="icon" href="Logo/logo.png" />';
-
 function decodificar($dat)
 {
      return utf8_decode($dat);
 }
-
-
 //********************************************************************** */
 
 $name = $_POST['nombre'];
@@ -101,5 +97,3 @@ $pdf->Output('I', $Now . '.pdf', true);
 
 
 //***************************************** */
-
-?>
