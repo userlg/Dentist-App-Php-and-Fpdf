@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="tailwind.css" />
   <title>Click Dental Design - App</title>
 </head>
+<h1></h1>
 
 <body>
   <div class="flex justify-end mr-12 mt-10">
